@@ -3,13 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(2 ^ 1)
-	fmt.Println(3 ^ 2)
-	fmt.Println(2 << 1)
-	fmt.Println(3 ^ 2)
-	fmt.Println(32 >> 2)
-	fmt.Println(3 ^ 2)
-	// fmt.Println(singleNumber([]int{2, 2, 1}))
+	fmt.Println(singleNumber([]int{4, 1, 2, 1, 2}))
 }
 
 // func singleNumber(nums []int) int {
@@ -33,8 +27,7 @@ func main() {
 func singleNumber(nums []int) int {
 	result := nums[0]
 	for i := 1; i < len(nums); i++ {
-		fmt.Println(result, "^", nums[i])
-		result = result ^ nums[i]
+		result ^= nums[i]
 		continue
 	}
 	return result
